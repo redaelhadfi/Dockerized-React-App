@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: ./backend # Path where your backend Dockerfile is located
+    container_name: app
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend:/usr/src/app # Map only the backend folder to the container
+    depends_on:
+      - mysql-dev
+    environment:
+      NODE_ENV: development
+      DB_HOST: mysql-dev
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: devpassword
+      DB_NAME: devdb
+
+
+  mysql-dev:
+    image: mysql:latest
+    container_name: mysql-dev
+    environment:
+      MYSQL_ROOT_PASSWORD: devpassword
+      MYSQL_DATABASE: devdb
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql-data-dev:/var/lib/mysql
+
+  mysql-prod:
+    image: mysql:latest
+    container_name: mysql-prod
+    environment:
+      MYSQL_ROOT_PASSWORD: prodpassword
+      MYSQL_DATABASE: proddb
+    ports:
+      - "3309:3306"
+    volumes:
+      - mysql-data-prod:/var/lib/mysql
+
+volumes:
+  mysql-data-dev:
+  mysql-data-prod:

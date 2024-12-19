@@ -1,0 +1,51 @@
+Given that the table will feed a reaction AI, the columns should emphasize aspects of the video that inform contextual understanding and trigger meaningful reactions. Here's an optimized breakdown:
+
+Essential Columns for Reaction AI:
+1. timestamp (Key Column):
+    * Core reference for aligning reactions with specific video moments.
+2. transcript:
+    * Provides spoken content for understanding the narrative.
+    * Enables linguistic reactions based on dialogue or keywords.
+3. keywords:
+    * Highlights significant terms or phrases.
+    * Helps AI focus on recurring themes or important mentions for dynamic reactions.
+4. sentiments:
+    * Indicates emotional tone (e.g., neutral, positive, negative).
+    * Guides emotional alignment for the AI's reactions.
+5. emotions:
+    * Detects specific emotions (e.g., joy, anger).
+    * Triggers more nuanced and human-like reactions.
+6. faces:
+    * Identifies individuals in the video and their presence duration.
+    * Facilitates reactions based on participants (e.g., greeting, commenting on appearances).
+7. audioEffects:
+    * Provides details like silence, applause, or background music.
+    * Helps the AI adapt its reactions (e.g., excitement during applause or calm during silence).
+8. topics:
+    * Categorizes overarching themes (e.g., science, music).
+    * Sets the contextual stage for informed reactions.
+9. scenes and shots:
+    * Highlights visual transitions.
+    * Enables scene-based reactions (e.g., commenting on a cut to a new environment).
+10. statistics:
+    * Offers data like speaker word counts or dominant speakers.
+    * Enables reactions acknowledging participation dynamics (e.g., “Speaker 1 is talking a lot!”).
+
+Optional but Contextually Relevant:
+1. ocr:
+    * On-screen text can offer additional context.
+    * Use if the AI needs to react to visible text (e.g., titles, subtitles).
+2. namedLocations and namedPeople:
+    * Adds contextual layers by identifying mentioned places or people.
+    * Use for reactions about specific entities.
+
+Columns to Exclude or Use Sparingly:
+1. detectedObjects:
+    * Generic objects are less relevant unless the AI needs to react visually to them.
+2. blocks:
+    * Too granular and unlikely to inform meaningful reactions.
+3. textualContentModeration:
+    * Useful only for filtering inappropriate content, not for dynamic reactions.
+4. labels:
+    * Often duplicates information from keywords and topics.
+
